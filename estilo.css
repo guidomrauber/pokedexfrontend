@@ -1,22 +1,28 @@
 body{
-  background: #0C7C8B;
+  
   color: red;
   text-shadow: 1px 1px #fff;
 }
  header {
   background: black;
+  color: red;
   height: 40px;
   top:0;
   position: fixed;
   width: 100%;
   margin-bottom:10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
- 
-
+.logo{
+  padding-left: 20px;
+}
 #li{
    display: inline;
    text-align: center;
     margin: 0 10px 0 0;
+  padding-right: 25px;
 }
 #li a {
    padding: 2px 7px 2px 7px;

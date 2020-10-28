@@ -22,8 +22,8 @@ const displayImage = url => {
     let imgElement = document.getElementById("img")
     imgElement.style.display = "flex";
     imgElement.setAttribute('src', url);
-    imgElement.setAttribute('width', '200');
-    imgElement.setAttribute('height', '200');
+    imgElement.setAttribute('width', '100');
+    imgElement.setAttribute('height', '100');
     // obtener elemento del DOM
     const divImg= document.getElementById('img-pokemon');
     // agregar el nodo imagen a el div

@@ -1,8 +1,10 @@
 body{
-  
-  color: red;
+  background-color: #FFffbf;
+	position: relative;
+  color: black;
   text-shadow: 1px 1px #fff;
 }
+
  header {
   background: black;
   color: red;

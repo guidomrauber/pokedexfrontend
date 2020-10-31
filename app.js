@@ -1,13 +1,13 @@
 const retrievePokemon = async () => {
     const name = document.getElementById('pokemon-name').value.toLowerCase().trim('');
-    console.time('callPokemon');
+    
     let rawData = {};
 
     if (name) {
         try {
             rawData = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-            console.log(rawData.data);
-            displayImage(rawData.data.sprites.front_default);
+            displayCard(rawData.data.sprites.front_default, rawData.data.order, rawData.data.name, 
+                        rawData.data.base_experience,rawData.data.types[0].type.name);
         } catch (error) {
             // Si hay error ejecuto la funcion de error
             showError()
@@ -17,18 +17,72 @@ const retrievePokemon = async () => {
 
 }
 
-const displayImage = url => {
+
+
+    
+const displayCard = (url, attibuteOrder, attibuteName, attibuteExperience, attibuteType) => {
     // Selecciono el elemento de la image y le seteo el valor al src para que lo dibuje, asi evito que cree muchas imagenes
-    let imgElement = document.getElementById("img")
-    imgElement.style.display = "flex";
+    
+	let card = document.createElement('div');
+    card.className = 'card container';
+    card.id = 'card-' ;
+    const mainBody = document.getElementById('container-card');
+    mainBody.appendChild(card);
+
+    let cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    cardBody.id = 'card-body-' ;
+    const mainCard = document.getElementById('card-' );
+    mainCard.appendChild(cardBody);
+
+    // crear nodo tipo img
+    const imgElement = document.createElement('img');
+    // agregar atributos
+    imgElement.className = 'img-pokemon';
+    imgElement.id = 'img-pokemon-' ;
     imgElement.setAttribute('src', url);
-    imgElement.setAttribute('width', '100');
-    imgElement.setAttribute('height', '100');
+    
+    const orderPokemon = document.createElement('h5');
+    orderPokemon.innerHTML = 'Order: ' + attibuteOrder;
+    orderPokemon.id = 'order-pokemon-';
+
+    const title = document.createElement('h4');
+    title.innerHTML = 'Name: ' + attibuteName;
+    title.id = 'title' ;
+
+    const textExperience = document.createElement('p');
+    textExperience.innerHTML = 'Base Experience: ' + attibuteExperience;
+    textExperience.id = 'text-experience-' ;
+
+    const textOrder = document.createElement('p');
+    textOrder.innerHTML = 'Order: ' + attibuteOrder;
+    textOrder.id = 'text-order-' ;
+
+    const textType = document.createElement('p');
+    textType.innerHTML = 'Type: ' + attibuteType;
+    textType.id = 'text-type-' ; 
+    textType.className = 'text-type'; 
+
+    const addPokemon = document.createElement('a');
+    addPokemon.innerHTML = 'Add to Pokedex';
+    addPokemon.id = 'add-pokemon-' ; 
+    addPokemon.className = 'add-pokemon'; 
+    addPokemon.setAttribute('href', '*');
+
     // obtener elemento del DOM
-    const divImg= document.getElementById('img-pokemon');
-    // agregar el nodo imagen a el div
-    divImg.appendChild(imgElement);
+    const divBody = document.getElementById('card-body-' + count);
+    // agregar el nodo al div
+    divBody.appendChild(imgElement);
+    divBody.appendChild(orderPokemon);
+    divBody.appendChild(title);
+    divBody.appendChild(textExperience);
+    divBody.appendChild(textType);
+    divBody.appendChild(addPokemon);
+
+     
+
 }
+
 
 
 // Muestro  el mesaje que no hay resultado y oculto la imagen por si tiene algo y despues de 3 segundo limpio el mensaje

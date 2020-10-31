@@ -28,6 +28,7 @@ const seleccionarHTML = () => {
         mensajeError: document.getElementById("mensaje-error"),
         imagen: document.getElementById("imagen-pokemon"),
         agregarPokemon: document.getElementById("botonera")
+		
     }
 }
 
@@ -38,7 +39,7 @@ const mostrarPokemon = (data, html) => {
     html.idPokemon.innerText = data.id
     html.nombrePokemon.innerText = (data.name).toUpperCase()
     html.imagen.setAttribute("src", data.sprites.front_default)
-    html.mensajeError.innerText = ""
+	html.mensajeError.innerText = ""
 }
 
 // Muestra los mensajes de error
@@ -74,7 +75,8 @@ const agregarBoton = (data, botonera) => {
         id: data.id,
         tipos: normalizarTipos(data.types),
         nombre: data.name.toUpperCase(),
-        imagen: data.sprites.front_default
+        imagen: data.sprites.front_default,
+		
     }
     botonera.style.display = "flex"
     botonera.innerHTML = `<button id="" onclick='agregarEquipo(${JSON.stringify(pokemon)})' class='agregar-pokemon'>Agregar ${data.name} a equipo</button>`

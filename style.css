@@ -8,7 +8,7 @@
     width: 100%;
     height: 100vh;
     overflow-y: hidden;
-    background: url("https://c.wallhere.com/photos/bc/c5/Pok_mon_video_games_pixel_art_pixels-1361965.jpg!d") no-repeat center center fixed;
+    background: url("images/pokemon.jpg") no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;

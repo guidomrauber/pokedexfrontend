@@ -64,6 +64,7 @@ body{
 }
 
 .container-2 input#get-pokemons{
+	vertical-align: center;
   width: 350px;
   height: 30px;
   background: green;

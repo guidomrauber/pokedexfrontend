@@ -1,61 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
-	
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
   <link rel="stylesheet" href="style/skeleton.css">
   
-    <title>Pokedex</title>
-  </head>
-  <header class="header">
+<link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
+  <title>Pokedex</title>
+</head>
+<header class="header">
     
-      <span class="logo">POKEMONDEX</span>
+      <span class="logo">POKEDEX</span>
       <div id="li">
         <a href="index.html">Home</a> -
 
         <a href="lista.html">List</a> -
 
         <a href="/contact">Save</a> -
-		<a href="https://pokeapi.co">Link</a> -
+		<a href="https://pokedex-prueba.herokuapp.com/Pokemons">Link</a> -
 		<a href="http://detmutante.tonohost.com/?i=1">Mutante</a> -
+		<a href="http://memorex.tonohost.com/?i=1">MY MEMORI</a> -
 		<a href="fin.html">Salir</a>
       </div>
     
   </header>
 
-  <body>
-    <div align="center"><h1></h1></div>
+<body>
+<div align="center"><h1></h1></div>
     <div align="center"><h1></h1></div>
     <br />
     <br />
 
-    <div align="center"><h1>Llamando al  pokemon</h1></div>
+    <div align="center"><h1>Llamando al  equipo pokemon</h1></div>
     <div align="center"><h1>Haciendo experimentos por Guido Rauber</h1></div>
-    <div class="box">
-      <div class="input-component">
-        <input type="text" id="pokemon-name" placeholder="Search..." />
-      </div>
+  <!-- Main container -->
+  <div class="container">
 
-      <div class="container-2">
-        <input type="button" value="Get pokemon" id="get-pokemons" />
-
-        <h3 id="msj"></h3>
-        <div class="" id="img-pokemon">
-          <img id="img" src="" alt="" />
-        </div>
-      </div>
-    </div>
-<div>
-                
-                <div class="container-card container" id="container-card"></div> 
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="app.js"></script>
     
-  </body>
-  <footer class="footer bg-dark">
+    <div class="get-info-form">
+      <form onsubmit="return formData(event)">
+        <div class="row">
+          <label for="username">ingrese pokemon</label>
+          <input type="text" id="username" placeholder="Search...">
+        
+		</div>
+        
+        <div id="error-message">
+            <span id="error-content"></span>
+          </div>
+      </form>
+      
+    </div>
+    <div class="main-container" id="pokemon-result"></div>
+    <div class="main-container" id="pokemon-images">
+      
+      <table class="u-full-width" id="pokemon-list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Habilidades</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+  </div>
+  <div class="box">
+<div class="container-2">
+        <input type="button" value="GRABAR" id="get-pokemons" />
+
+            
+    </div>
+	</div>
+  <!-- Scripts -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="listado.js"></script>
+</body>
+<footer class="footer bg-dark">
     <div class="container text-center">
       <strong>
         <a target="_blank" href=""

@@ -6,6 +6,11 @@ const requestedPokemons = [];
 document.getElementById('username').onkeyup = function() {
 
 }
+var order2 = 0;
+var name = "";
+var type = "";
+var habilidad = "";
+var sampleImage = "";
 
 
 function formData(event) {
@@ -32,10 +37,7 @@ function cleanList() {
 // muestra info específica de cada pokemon
 function displayInfo(data) {
   getPokemonData(data);
-  const p = document.createElement('p');
-  const textValue = document.createTextNode(data.firstToUpperCase());
-  p.appendChild(textValue);
-  document.getElementById('pokemon-list').appendChild(p);
+  
 }
 
 // obtiene los datos de pokemones
@@ -72,7 +74,11 @@ function displayPokemonInfo(data, index = 0) {
   const cellTypes = row.insertCell();
 
   const abilitiesList = document.createElement('ul');
-
+  order2 = cellID;
+  name = cellName;
+  type =  cellTypes;
+  sampleImage = cellImage;
+  habilidad = cellAbilities;
   data.abilities.reverse().map(attack => {
     const liAbility = document.createElement('li');
     liAbility.innerHTML = attack.ability.name.firstToUpperCase();
@@ -94,7 +100,7 @@ function displayPokemonInfo(data, index = 0) {
   cellImage.append(img);
   cellID.innerHTML = data.id;
   cellName.innerHTML = data.name.firstToUpperCase();
-  
+  let order = data.id;
 }
 
 let i = 1;
@@ -105,7 +111,55 @@ function getFirstTen() {
     getPokemonData(i, i);
   }
 }
+function eatFood() {
+	let myHeaders = new Headers();
+myHeaders :{
+    'Content-Type', 'application/json'
+ }
+  const options = {
+    method: 'POST',
+    body: new URLSearchParams({
+      'order': order2,
+      'name': name,
+      'sampleImage': sampleImage,
+	  'type': type,
+	  'habilidad': habilidad
+    }),
+  }
+  let myRequest = new Request('http://localhost:3000/api/pokemon/', options);
+  fetch(myRequest, {credentials: 'include'})
+    .then((res) => {
+      if(res.ok) {
+        console.log('Ok');
+        return res.json(); // <- parseamos el response y lo devolvemos a nuestra función
+      }
 
+    })
+    .then((resParsed) => {
+      console.log(resParsed); // <- mostramos los datos recibidos, luego de ser parseados
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+	
+	//var url = 'https://localhost:3000/api/pokemon/';
+//var data2 = {'name': name};
+
+//fetch(url, {
+//  method: 'POST', // or 'PUT'
+//  body: JSON.stringify(data2), // data can be `string` or {object}!
+//  headers:{
+ //   'Content-Type': 'application/json'
+ // }
+//}).then(res => res.json())
+//.catch(error => console.error('Error:', error))
+//.then(response => console.log('Success:', response));
+	
+
+     
+  
 String.prototype.firstToUpperCase = function firstToUpperCase() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }

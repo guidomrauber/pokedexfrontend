@@ -4,24 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
-	
-  <link rel="stylesheet" href="style/skeleton.css">
-  
-    <title>Pokedex</title>
+    <title>Sample frontend</title>
   </head>
   <header class="header">
     
       <span class="logo">POKEMONDEX</span>
       <div id="li">
-        <a href="index.html">Home</a> -
+        <a href="/">Home</a> -
 
-        <a href="lista.html">List</a> -
+        <a href="/recipes">Link</a> -
 
-        <a href="/contact">Save</a> -
-		<a href="https://pokedex-prueba.herokuapp.com/Pokemons">Link</a> -
-		<a href="http://detmutante.tonohost.com/?i=1">Mutante</a> -
-		<a href="http://memorex.tonohost.com/?i=1">MY MEMORI</a> -
-		<a href="fin.html">Salir</a>
+        <a href="/contact">Save</a>
       </div>
     
   </header>
@@ -32,7 +25,7 @@
     <br />
     <br />
 
-    <div align="center"><h1>Llamando al  pokemon</h1></div>
+    <div align="center"><h1>Call pokemon</h1></div>
     <div align="center"><h1>Haciendo experimentos por Guido Rauber</h1></div>
     <div class="box">
       <div class="input-component">
@@ -42,26 +35,16 @@
       <div class="container-2">
         <input type="button" value="Get pokemon" id="get-pokemons" />
 
-            
-    </div>
-	
+        <h3 id="msj"></h3>
+        <div class="" id="img-pokemon">
+          <img id="img" src="" alt="" />
+        </div>
       </div>
     </div>
-<table class="u-full-width" id="pokemon-list">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Imagen</th>
-            <th>Habilidades</th>
-            <th>Tipo</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="index.js"></script>
-    
+    <script src="app.js"></script>
+    <?php include("includes/footer.html");?>
   </body>
   <footer class="footer bg-dark">
     <div class="container text-center">

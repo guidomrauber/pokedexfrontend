@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    
+	<link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
+	
+  <link rel="stylesheet" href="style/skeleton.css">
+</head>
+<header class="header">
+    
+      <span class="logo">POKEDEX</span>
+      <div id="li">
+        <a href="index.html">Home</a> -
+
+        <a href="lista.html">List</a> -
+
+        <a href="/contact">Save</a> -
+		<a href="https://pokeapi.co">Link</a> -
+		<a href="http://detmutante.tonohost.com/?i=1">Mutante</a> -
+		<a href="fin.html">Salir</a>
+      </div>
+    
+  </header>
+
+
+  <body>
+  
+  <div>
+                <label className="text-white"></label>
+                <p className="text-white text-muted">*Los botones de arriba y abajo tienen la misma funcionalidad*</p>
+            <button type="button" onclick="getFirstTen()">+10</button>    
+    <table class="u-full-width" id="pokemon-list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Habilidades</th>
+            <th>Tipos</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>            
+</div>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="src/app.js"></script>	
+			
+</body>
+
+ <footer class="footer bg-dark">
+    <div class="container text-center">
+      <strong>
+        <a target="_blank" href=""
+          >Copyright &copy; 2020 GUIDO M RAUBER
+        </a></strong
+      >
+    </div>
+  </footer>
+</html>

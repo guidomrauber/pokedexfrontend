@@ -112,52 +112,24 @@ function getFirstTen() {
   }
 }
 function eatFood() {
-	let myHeaders = new Headers();
-myHeaders :{
-    'Content-Type', 'application/json'
- }
-  const options = {
-    method: 'POST',
-    body: new URLSearchParams({
-      'order': order2,
-      'name': name,
-      'sampleImage': sampleImage,
-	  'type': type,
-	  'habilidad': habilidad
-    }),
-  }
-  let myRequest = new Request('http://localhost:3000/api/pokemon/', options);
-  fetch(myRequest, {credentials: 'include'})
-    .then((res) => {
-      if(res.ok) {
-        console.log('Ok');
-        return res.json(); // <- parseamos el response y lo devolvemos a nuestra función
-      }
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-    })
-    .then((resParsed) => {
-      console.log(resParsed); // <- mostramos los datos recibidos, luego de ser parseados
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-}
+var raw = JSON.stringify({"order":"8","name":"joya","sampleImage":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png","type":"Fire","habilidad":"Fir "});
 
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://localhost:3000/api/pokemon/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
 	
-	//var url = 'https://localhost:3000/api/pokemon/';
-//var data2 = {'name': name};
-
-//fetch(url, {
-//  method: 'POST', // or 'PUT'
-//  body: JSON.stringify(data2), // data can be `string` or {object}!
-//  headers:{
- //   'Content-Type': 'application/json'
- // }
-//}).then(res => res.json())
-//.catch(error => console.error('Error:', error))
-//.then(response => console.log('Success:', response));
-	
-
+	}
      
   
 String.prototype.firstToUpperCase = function firstToUpperCase() {

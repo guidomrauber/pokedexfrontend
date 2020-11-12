@@ -112,22 +112,63 @@ function getFirstfive() {
   }
 }
 function eatFood() {
-var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({"order":"6","name":"probando este puto tutorial"});
+// ---------------------
+// probando con request 
+	
+	var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'http://localhost:8080/api/pokedexs',
+  'headers': {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({"order":"6","name":"probando este puto tutorial"})
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
 };
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});
 
-fetch("http://localhost:8080/api/pokedexs", requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+//-------------------------
+// probando con ajax 
+
+//var settings = {
+//  "url": "http://localhost:8080/api/pokedexs",
+//  "method": "POST",
+ // "timeout": 0,
+ // "headers": {
+//    "Content-Type": "application/json"
+//  },
+//  "data": JSON.stringify({"order":"6","name":"probando este puto tutorial"}),
+//};
+
+//$.ajax(settings).done(function (response) {
+//  console.log(response);
+//});
+
+
+// --------------------------
+// probando con fetch
+
+//var myHeaders = new Headers();
+//myHeaders.append("Content-Type", "application/json");
+
+//var raw = JSON.stringify({"order":"6","name":"probando este puto tutorial"});
+
+//var requestOptions = {
+ // method: 'POST',
+//  headers: myHeaders,
+ // body: raw,
+//  mode: 'no-cors',
+//  redirect: 'follow'
+//};
+
+//fetch("http://localhost:8080/api/pokedexs", requestOptions)
+ // .then(response => response.text())
+ // .then(result => console.log(result))
+ // .catch(error => console.log('error', error));
      
 }
 

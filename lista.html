@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  
+  <link rel="stylesheet" href="style/skeleton.css">
+  
+<link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
+  <title>Pokedex</title>
+</head>
+<header class="header">
+    
+      <span class="logo">POKEDEX</span>
+      <div id="li">
+        <a href="index.html">Inicio</a> -
+
+        <a href="lista.html">Listado</a> -
+
+        <a href="/contact">Grabar</a> -
+		<a href="https://pokedex-prueba.herokuapp.com/Pokemons">Enlace</a> -
+		<a href="http://detmutante.tonohost.com/?i=1">Mi Pagina</a> -
+		<a href="http://memorex.tonohost.com/?i=1">Juego memoria</a> -
+		<a href="fin.html">Salir</a>
+      </div>
+    
+  </header>
+
+<body>
+<div align="center"><h1></h1></div>
+    <div align="center"><h1></h1></div>
+    <br />
+    <br />
+
+    <div align="center"><h1>Llamando al  equipo pokemon</h1></div>
+    <div align="center"><h1>Haciendo experimentos por Guido Rauber</h1></div>
+  <!-- Main container -->
+  <div class="container">
+
+    
+    <div class="get-info-form">
+      <form onsubmit="return formData(event)">
+        <div class="row">
+          <label for="username">ingrese pokemon</label>
+          <input type="text" id="username" placeholder="Search...">
+        
+		</div>
+        
+        <div id="error-message">
+            <span id="error-content"></span>
+          </div>
+      </form>
+      
+    </div>
+    <div class="main-container" id="pokemon-result"></div>
+    <div class="main-container" id="pokemon-images">
+      
+      <table class="u-full-width" id="pokemon-list">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Imagen</th>
+            <th>Habilidades</th>
+            <th>Tipo</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+  <div class="box">
+<div class="container-2">
+        <button type="button" onclick="getFirstfive()" id="get-pokemons">AGREGAR POKEMON A LA BASE</button>
+
+            
+    </div>
+	</div>
+	
+  <!-- Scripts -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="listado2.js"></script>
+</body>
+<footer class="footer bg-dark">
+    <div class="container text-center">
+      <strong>
+        <a target="_blank" href=""
+          >Copyright &copy; 2020 GUIDO M RAUBER
+        </a></strong
+      >
+    </div>
+  </footer>
+</html>

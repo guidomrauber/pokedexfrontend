@@ -1,4 +1,4 @@
-const URL_POKEAPI = "https://pokeapi.co/api/v2/";
+const URL_POKEAPI = "https://localhost:3000/api/pokemon/";
 
 // Lista de pokemones consultados
 const requestedPokemons = [];
@@ -44,7 +44,7 @@ function displayInfo(data) {
 function getPokemonData(name, index) {
   document.getElementById('error-message').style.display = "none";
   if (!requestedPokemons.includes(name)) {
-    axios.get(URL_POKEAPI + 'pokemon/' + name).then(resp => {
+    axios.get(URL_POKEAPI + name).then(resp => {
       requestedPokemons.push(resp.data.name);
       displayPokemonInfo(resp.data, index);
     }).catch(error => {
@@ -115,7 +115,7 @@ function eatFood() {
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({"order":"6","name":"probando este puto tutorial"});
+var raw = JSON.stringify({"order":"8","name":"joya","sampleImage":"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/5.png","type":"Fire","habilidad":"Fir "});
 
 var requestOptions = {
   method: 'POST',
@@ -124,13 +124,14 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://localhost:8080/api/pokedexs", requestOptions)
+fetch("http://localhost:3000/api/pokemon/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+	
+	}
      
-}
-
+  
 String.prototype.firstToUpperCase = function firstToUpperCase() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }

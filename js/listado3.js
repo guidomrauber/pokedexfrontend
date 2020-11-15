@@ -1,5 +1,5 @@
 const poke_container = document.getElementById('poke_container');
-const pokemons_num = 150; // 150 pokemon in 1st generation
+const pokemons_num = 5; // 5 pokemon in 1st generation
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',
@@ -28,7 +28,7 @@ const fetch_pokemon = async() =>{
 
 // this functions calls the pokemon API 
 const get_pokemon = async id =>{
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const url = 'http://localhost:8080/api/pokedexs/${id}';
     const res = await fetch(url);
     const pokemon = await res.json();
     create_pokemon_card(pokemon);
@@ -40,11 +40,11 @@ function create_pokemon_card(pokemon){
     const pokemon_el = document.createElement('div');
     pokemon_el.classList.add('pokemon');
 
-    const poke_type = pokemon.types.map(el => el.type.name);
+    const poke_type = pokemon.type;
 
-    const type = main_types.find(type => poke_type.indexOf(type) > -1);
+    const type = pokemon.type;
 
-    const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
+    const name = pokemon.name;
 
     const color = colors[type];
 
@@ -52,7 +52,7 @@ function create_pokemon_card(pokemon){
 
     const pokemon_inner_html = `
         <div class="img_container"> 
-            <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" />
+            <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.order}.png" />
         </div>
         <div class="info">
             <span class="number">#${pokemon.id.toString().padStart(3,'0')}</span>

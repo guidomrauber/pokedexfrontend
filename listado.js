@@ -74,11 +74,7 @@ function displayPokemonInfo(data, index = 0) {
   const cellTypes = row.insertCell();
 
   const abilitiesList = document.createElement('ul');
-  order2 = cellID;
-  name = cellName;
-  type =  cellTypes;
-  sampleImage = cellImage;
-  habilidad = cellAbilities;
+  
   data.abilities.reverse().map(attack => {
     const liAbility = document.createElement('li');
     liAbility.innerHTML = attack.ability.name.firstToUpperCase();
@@ -93,13 +89,17 @@ function displayPokemonInfo(data, index = 0) {
     typesList.appendChild(typeLi);
   });
   cellTypes.append(typesList);
-
-  const img = document.createElement('img');
+const img = document.createElement('img');
   img.src = data.sprites.front_shiny;
   img.title = data.name.firstToUpperCase();
   cellImage.append(img);
   cellID.innerHTML = data.id;
   cellName.innerHTML = data.name.firstToUpperCase();
+  order2 = data.id;
+  name = data.name.firstToUpperCase();
+  sampleImage = data.sprites.front_shiny;
+  type = data.types[0].type.name;
+  //habilidad = abilitiesList;
   
 }
 
@@ -113,8 +113,11 @@ function getFirstfive() {
 }
 function eatFood() {
 	
-document.form.order.value=order2;
-
+document.getElementById("order").value=order2;
+document.getElementById("name").value=name;
+document.getElementById("sampleImage").value=sampleImage;
+document.getElementById("type").value=type;
+document.getElementById("habilidad").value="";
 }
 
 String.prototype.firstToUpperCase = function firstToUpperCase() {

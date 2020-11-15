@@ -45,7 +45,7 @@ function getPokemonData(name, index) {
   document.getElementById('error-message').style.display = "none";
   if (!requestedPokemons.includes(name)) {
     axios.get(URL_POKEAPI + 'pokemon/' + name).then(resp => {
-      requestedPokemons.push(resp.data.name);
+//requestedPokemons.push(resp.data.name);
       displayPokemonInfo(resp.data, index);
     }).catch(error => {
       console.error(error);
@@ -112,64 +112,9 @@ function getFirstfive() {
   }
 }
 function eatFood() {
-
-// ---------------------
-// probando con request 
 	
-	var request = require('request');
-var options = {
-  'method': 'POST',
-  'url': 'http://localhost:8080/api/pokedexs',
-  'headers': {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({"order":"6","name":"probando este puto tutorial"})
+document.form.order.value=order2;
 
-};
-request(options, function (error, response) {
-  if (error) throw new Error(error);
-  console.log(response.body);
-});
-
-//-------------------------
-// probando con ajax 
-
-//var settings = {
-//  "url": "http://localhost:8080/api/pokedexs",
-//  "method": "POST",
- // "timeout": 0,
- // "headers": {
-//    "Content-Type": "application/json"
-//  },
-//  "data": JSON.stringify({"order":"6","name":"probando este puto tutorial"}),
-//};
-
-//$.ajax(settings).done(function (response) {
-//  console.log(response);
-//});
-
-
-// --------------------------
-// probando con fetch
-
-//var myHeaders = new Headers();
-//myHeaders.append("Content-Type", "application/json");
-
-//var raw = JSON.stringify({"order":"6","name":"probando este puto tutorial"});
-
-//var requestOptions = {
- // method: 'POST',
-//  headers: myHeaders,
- // body: raw,
-//  mode: 'no-cors',
-//  redirect: 'follow'
-//};
-
-//fetch("http://localhost:8080/api/pokedexs", requestOptions)
- // .then(response => response.text())
- // .then(result => console.log(result))
- // .catch(error => console.log('error', error));
-     
 }
 
 String.prototype.firstToUpperCase = function firstToUpperCase() {

@@ -100,7 +100,7 @@ function displayPokemonInfo(data, index = 0) {
   cellImage.append(img);
   cellID.innerHTML = data.id;
   cellName.innerHTML = data.name.firstToUpperCase();
-  let order = data.id;
+  
 }
 
 let i = 1;

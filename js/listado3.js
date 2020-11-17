@@ -31,11 +31,21 @@ const fetch_pokemon = async() =>{
 
 
 // this functions calls the pokemon API 
+GET /api/pokedexs/1 
+Host: localhost:8080
 
 
+var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var requestOptions = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
+};
 const get_pokemon = async id =>{
     const url = 'http://localhost:8080/api/pokedexs/${id}';
-    const res = await fetch(url);
+    const res = await fetch(url,requestOptions);
     const pokemon = await res.json();
     create_pokemon_card(pokemon);
 }

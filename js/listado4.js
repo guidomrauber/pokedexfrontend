@@ -1,5 +1,6 @@
+
 const poke_container = document.getElementById('poke_container');
-const pokemons_num = 1500; // 150 pokemon in 1st generation
+const pokemons_num = 150; // 150 pokemon in 1st generation
 const colors = {
 	fire: '#FDDFDF',
 	grass: '#DEFDE0',

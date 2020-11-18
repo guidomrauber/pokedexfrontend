@@ -117,9 +117,13 @@ document.getElementById("order").value=order2;
 document.getElementById("name").value=name;
 document.getElementById("sampleImage").value=sampleImage;
 document.getElementById("type").value=type;
-document.getElementById("habilidad").value="";
+
 }
 
+
+  
+  
+  
 String.prototype.firstToUpperCase = function firstToUpperCase() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }

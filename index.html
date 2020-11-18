@@ -33,10 +33,9 @@
 <div align="center"><h1></h1></div>
     <div align="center"><h1></h1></div>
     <br />
-    <br />
 
-    <div align="center"><h1>Llamando al  equipo pokemon</h1></div>
-    <div align="center"><h1>Haciendo experimentos por Guido Rauber</h1></div>
+    <div align="center"><h1>Busqueda para el equipo pokedex</h1></div>
+    
   <!-- Main container -->
   <div class="container">
 
@@ -81,7 +80,7 @@
 		
 		<h3 align="center">TARGETA DE POKEMON</h3><hr />
 		
-		<form method="post" action="http://localhost:8080/api/pokedexs" method="POST" id="form">
+		<form method="post" action="http://localhost:8080/api/pokedexs" method="POST" id="form" target="pp">
 			<div class="form-group">				
 				<p align="center">
 				<label for="ORDER">ORDEN:</label>
@@ -102,18 +101,17 @@
 				<label for="mail">TIPO:</label>
 				<input type="text" class="form-control" name="type" id="type">
 			</div>
-		  <div class="form-group">				
-				<p align="center">
-				<label for="PASSWORD">HABILIDAD:</label>
-				<input type="text" class="form-control" name="habilidad" id="habilidad">
-			</div>
+		  
 		  
 		  	<p align="center">
 		  
-		  <button type="submit" class="btn btn-success btn-block">GUARDAR </button>
+		  <button type="submit" class="btn btn-success btn-block" onclick="alert('¡Su Pokedex fue guardado !')">GUARDAR </button>
 			</p>
 			
 		</form>		
+		
+		<iframe name="pp" style="position:absolute; top:-1500px;"></iframe>
+		
 		</div>		
   <!-- Scripts -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

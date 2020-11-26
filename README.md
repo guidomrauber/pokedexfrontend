@@ -1,28 +1,25 @@
-# pokedexfrontend
-pequeña aplicacion de busqueda de personajes de pokemon
-estos son mostrados y guardados en una base de datos hasta conformar un equipo
-luego se pueda acceder a la base de datos y mostrar el equipo completo
-
-Este pequeña aplicacion
+﻿Este pequeña aplicacion
 
 es sobre un crud completo con los siguientes programas
 
-node-js-with-mysql-using-sequelize-express en el backend que se encuentra aparte
+node-js-with-mysql-using-sequelize-express
 
-Tengo dudas si se puede conectarse el frontend con este backend en el mismo puerto
+Es una pequeña aplicacion que hace una  busqueda de pokemones en la pagina de pokeapi 
 
-Ejemplos que veo son distintos frameworks y distintos puertos 
+y guardarlas en una base de datos mysql para la formacion del equipo,
 
-Distintos programas ejemplo Nodejs y Angular son algunos de los ejemplos 
+se tiene que aclarar que se hace la conexion con el backend que previamente fue diseñado
 
-El problema del CORS lo solucione por el problema en el header con el content-type 
+El equipo lo muestro en otra página que se encuentra el enlace en la barra de menu de navegacion y este, 
 
-pero me surge otros problemas o error ejemplo como que esta demas una } o un ) y si uno lo ve no sobra ni falta 
+esta integrado con los 5 personajes elegidos previamente 
 
-o problemas con el require por ejemplo me dice no esta definido
+tambien tiene enlaces a otras paginas en la barra de navegación 
 
-o en el fetch o axios o el que sea que intento guardar o leer datos al servidor , me dice typeerror cuando esta correcto
+Antes de usarla deben crear la base de datos pokedex_db, hacer funcionar el backend con node server.js 
 
-Pongo el mismo code del postman y me salta esos errores , cuando se supone en el postman anda sin problemas 
+y ahi se crearan automaticamente las tablas para guardar los datos
 
-o sea no tiene lógica, por eso dudo si se puede hacer la conexion dentro del mismo puerto
+
+
+

@@ -9,21 +9,21 @@
   
   <link rel="stylesheet" href="style/skeleton.css">
   
-<link rel="StyleSheet" href="estilo.css" type="text/css" media="screen" />
-  <title>Pokedex</title>
+<link rel="StyleSheet" href="style/estilo.css" type="text/css" media="screen" />
+  <title>Pokedexs</title>
+  <link rel="icon" type="image/ico" href="images/005.ico" sizes="" />
 </head>
 <header class="header">
-    
-      <span class="logo">POKEDEX</span>
+    <img class="logo" src="images/logo4.png" alt="Logo">
+      <span class="logo">POKEDEXS</span>
       <div id="li">
         <a href="index.html">Inicio</a> -
 
-        <a href="lista.html">Listado</a> -
+        <a href="lista.html">Equipo</a> -
 
-        <a href="/contact">Grabar</a> -
-		<a href="https://pokedex-prueba.herokuapp.com/Pokemons">Enlace</a> -
+        <a href="lista2.html">Enlace</a> -
 		<a href="http://detmutante.tonohost.com/?i=1">Mi Pagina</a> -
-		<a href="http://memorex.tonohost.com/?i=1">Juego memoria</a> -
+		<a href="http://memorex.tonohost.com/?i=1">Juego Memoria</a> -
 		<a href="fin.html">Salir</a>
       </div>
     
@@ -33,10 +33,9 @@
 <div align="center"><h1></h1></div>
     <div align="center"><h1></h1></div>
     <br />
-    <br />
 
-    <div align="center"><h1>Llamando al  equipo pokemon</h1></div>
-    <div align="center"><h1>Haciendo experimentos por Guido Rauber</h1></div>
+    <div align="center"><h1>Busqueda para el equipo pokedex</h1></div>
+    
   <!-- Main container -->
   <div class="container">
 
@@ -44,7 +43,7 @@
     <div class="get-info-form">
       <form onsubmit="return formData(event)">
         <div class="row">
-          <label for="username">ingrese pokemon</label>
+          <label for="username">ingrese nombre pokemon que quieres agregar</label>
           <input type="text" id="username" placeholder="Search...">
         
 		</div>
@@ -55,9 +54,7 @@
       </form>
       
     </div>
-    <div class="main-container" id="pokemon-result"></div>
-    <div class="main-container" id="pokemon-images">
-      
+         
       <table class="u-full-width" id="pokemon-list">
         <thead>
           <tr>
@@ -74,21 +71,58 @@
   </div>
   <div class="box">
 <div class="container-2">
-        <button type="button" onclick="eatFood()" id="get-pokemons">AGREGAR POKEMON A LA BASE</button>
-
-            
+        <button type="button" onclick="eatFood()" id="get-pokemons">AGREGAR AL EQUIPO EN LA BASE DE DATOS </button>
+   
     </div>
 	</div>
-	
+	<div class="row">	
+		<div class="col-sm-12 col-md-6 col-lg-6">
+		
+		<h3 align="center">TARGETA DE POKEMON</h3><hr />
+		
+		<form method="post" action="http://localhost:8080/api/pokedexs" method="POST" id="form" target="pp">
+			<div class="form-group">				
+				<p align="center">
+				<label for="ORDER">ORDEN:</label>
+				<input type="number" class="form-control" name="order" id="order">			
+		  </div>
+		  <div class="form-group">				
+				<p align="center">
+				<label for="name">NOMBRE:</label>
+				<input type="text" class="form-control" name="name" id="name">			
+		  </div>
+<div class="form-group">				
+				<p align="center">
+				<label for="DNI">IMAGEN:</label>
+				<input type="url" class="form-control" name="sampleImage" id="sampleImage">			
+		  </div>
+		  <div class="form-group">				
+				<p align="center">
+				<label for="mail">TIPO:</label>
+				<input type="text" class="form-control" name="type" id="type">
+			</div>
+		  
+		  
+		  	<p align="center">
+		  
+		  <button type="submit" class="btn btn-success btn-block" onclick="alert('¡Su Pokemon fue guardado al equipo !')">GUARDAR </button>
+			</p>
+			
+		</form>		
+		
+		<iframe name="pp" style="position:absolute; top:-1500px;"></iframe>
+		
+		</div>		
   <!-- Scripts -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="listado.js"></script>
+  <script src="js/listado.js"></script>
+  
 </body>
 <footer class="footer bg-dark">
     <div class="container text-center">
       <strong>
         <a target="_blank" href=""
-          >Copyright &copy; 2020 GUIDO M RAUBER
+          >| &copy; 2020 Pokedexs |Copyright &copy; 2020 GUIDO M RAUBER|
         </a></strong
       >
     </div>

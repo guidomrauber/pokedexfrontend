@@ -9,7 +9,6 @@ document.getElementById('username').onkeyup = function() {
 var order2 = 0;
 var name = "";
 var type = "";
-var habilidad = "";
 var sampleImage = "";
 
 
@@ -70,18 +69,9 @@ function displayPokemonInfo(data, index = 0) {
   const cellID = row.insertCell();
   const cellName = row.insertCell();
   const cellImage = row.insertCell();
-  const cellAbilities = row.insertCell();
   const cellTypes = row.insertCell();
 
-  const abilitiesList = document.createElement('ul');
   
-  data.abilities.reverse().map(attack => {
-    const liAbility = document.createElement('li');
-    liAbility.innerHTML = attack.ability.name.firstToUpperCase();
-    abilitiesList.appendChild(liAbility);
-  });
-  cellAbilities.append(abilitiesList);
-
   const typesList = document.createElement('ul');
   data.types.map(types => {
     const typeLi = document.createElement('li');

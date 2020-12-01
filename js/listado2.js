@@ -19,22 +19,31 @@ const colors = {
 
 const main_types = Object.keys(colors);
 
-function formData(event) {
-  event.preventDefault();
+function formData() {
+  
   let username = document.getElementById('username').value;
   EliminarInfo(username);
   
 }
+const eliminar = new XMLHttpRequest(); 
 
-function EliminarInfo(elim){
-  var reqoptions = {
-    method: 'DELETE',
-    redirect: 'follow'
-  };
-  fetch("http://localhost:8080/api/pokedex/${elim}", reqoptions)
-  .then (response => response.text())
-  .then (result => console.log(result))
-  .then (error => console.log('error', error));
+function EliminarInfo(username){
+ eliminar.open('DELETE',"http://localhost:8080/api/pokedex/${username}");
+ eliminar.onload = function () { 
+    
+  // Checking status 
+  if (self.http.status === 200) { 
+    
+    alert('el pokemon fue eliminado');
+  } else { 
+    
+    // Callback function (Error message) 
+    callback("Error: " + self.http.status); 
+  } 
+};
+
+// Send the request 
+eliminar.send(); 
 }
 
 //const fetch_pokemon = async() =>{
@@ -46,7 +55,7 @@ function EliminarInfo(elim){
 
 
 // this functions calls the pokemon API 
-var id =1;
+var i =1;
 //do {
 const requestURL1 = "http://localhost:8080/api/pokedexs/1";
 //const requestURL = "http://localhost:8080/api/pokedexs/${i}";
@@ -97,17 +106,6 @@ request5.onload = function() {
   const pokemon5 = request5.response;
   create_pokemon_card(pokemon5);
 }
-//var requestOptions = {
-//  method: 'GET',
-//  redirect: 'follow'
-//};
-
-//fetch("http://localhost:8080/api/pokedexs/1", requestOptions)
- // .then(response => response.json())
- // .then(result => console.log(result))
- // .catch(error => console.log('error', error));
-
-
 
 function create_pokemon_card(Pokemon){
     const pokemon_el = document.createElement('div');
@@ -131,7 +129,7 @@ const  pokemon = Pokemon;
         <div class="info">
             
             <h3 class = "id">ID ${id}</h3>
-              
+            <small class ="type">Type: <span>${type}</span></small>
         </div>
         
     `;

@@ -29,7 +29,7 @@ const main_types = Object.keys(colors);
 
 
 // this functions calls the pokemon API 
-var id =1;
+var i=1;
 //do {
 const requestURL1 = "http://localhost:8080/api/pokedexs/1";
 //const requestURL = "http://localhost:8080/api/pokedexs/${i}";

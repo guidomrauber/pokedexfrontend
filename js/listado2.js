@@ -19,6 +19,23 @@ const colors = {
 
 const main_types = Object.keys(colors);
 
+function formData(event) {
+  event.preventDefault();
+  let username = document.getElementById('username').value;
+  EliminarInfo(username);
+  
+}
+
+function EliminarInfo(elim){
+  var reqoptions = {
+    method: 'DELETE',
+    redirect: 'follow'
+  };
+  fetch("http://localhost:8080/api/pokedex/${elim}", reqoptions)
+  .then (response => response.text())
+  .then (result => console.log(result))
+  .then (error => console.log('error', error));
+}
 
 //const fetch_pokemon = async() =>{
 //   for(let i=1; i<=pokemons_num; i++){

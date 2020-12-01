@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="application/json; charset=utf-8" />
+    
   
   <link rel="stylesheet" href="style/skeleton.css">
   <link rel="stylesheet" href="styles/style.css">
@@ -48,13 +50,20 @@
      <br />
     <br />
 
-     <div align="center"><a>Elija el ID  eliminar</a></div>
-	
+     <div align="center"><a>Elija el ID  a eliminar</a></div>
+     <br />
   <!-- Scripts -->
+  <div class="get-info-form">
+    <form onsubmit="return formData(event)">
+      <div class="row">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="ID...">
+      
+      </div>
 <form>
 		  	<p align="center">
 		  
-		  <button type="submit" class="btn btn-success btn-block" onclick="alert('¡Su Pokemon fue eliminado del equipo !')">eliminar </button>
+		  <button type="submit" class="btn btn-success btn-block" onclick="formData(event)" onclick="alert('¡Su Pokemon fue eliminado del equipo !')">Eliminar </button>
 			</p>
 			
 </form>		

@@ -5,12 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Type" content="application/json; charset=utf-8" />
+
   
-  <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="style/skeleton.css">
-  
+  <link rel="stylesheet" href="styles/style.css">
 <link rel="StyleSheet" href="style/estilo.css" type="text/css" media="screen" />
   <title>Pokedexs</title>
   <link rel="icon" type="image/ico" href="images/005.ico" sizes="" />
@@ -31,9 +29,8 @@
     
   </header>
 
-
 <body>
-<div align="center"><h1></h1></div>
+    <div align="center"><h1></h1></div>
     <div align="center"><h1></h1></div>
     <br />
     <br />
@@ -51,11 +48,24 @@
      <br />
     <br />
 
-     <div align="center"><a href="eliminar.html">QUERES ELIMINAR INTEGRANTE</a></div>
+     <div align="center"><a>Elija el ID  eliminar</a></div>
 	
   <!-- Scripts -->
+<form>
+		  	<p align="center">
+		  
+		  <button type="submit" class="btn btn-success btn-block" onclick="alert('¡Su Pokemon fue eliminado del equipo !')">eliminar </button>
+			</p>
+			
+</form>		
+		
+		<iframe name="pp" style="position:absolute; top:-1500px;"></iframe>
+		
+		</div>		
+  <!-- Scripts -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="js/listado2.js"></script>
   
-  <script src="js/listado3.js"></script>
 </body>
 <footer class="footer bg-dark">
     <div class="container text-center">
